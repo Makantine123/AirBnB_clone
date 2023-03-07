@@ -9,7 +9,9 @@ The complete project is composed of the following:
 *  An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)
 
 # Final Product
-![imgae1](://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/fe2e3e7701dec72ce612472dab9bb55fe0e9f6d4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230307%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230307T061051Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=c2bedeb0c266f924fc46de14dd230c4a2e54ff7336449f32d713a8bc679ce7e0)
+![](/assets/images/hbnb_final_product_1)
+
+![](/assets/images/hbnb_final_product_2)
 
 # Project Breakdown
 
