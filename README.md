@@ -42,9 +42,9 @@ The complete project is composed of the following:
 
  ## Storage Principales
 
- ### Storing an Instance
+ ### 1. Storing an Instance
 
- ### File Storage via JSON
+ ### 2. File Storage via JSON
 
  ## Database Structure
 
