@@ -9,9 +9,9 @@ The complete project is composed of the following:
 *  An API that provides a communication interface between the front-end and your data (retrieve, create, delete, update them)
 
 # Final Product
-![](/assets/images/hbnb_final_product_1)
+![](/assets/images/hbnb_final_product_1.png)
 
-![](/assets/images/hbnb_final_product_2)
+![](/assets/images/hbnb_final_product_2.png)
 
 # Project Breakdown
 
