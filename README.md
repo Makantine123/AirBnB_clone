@@ -1,4 +1,4 @@
-![](/assests/hbnb_logo.png)
+![](/assets/images/hbnb_logo.png)
 
 This project is a simple copy of the [AirBnB Website](://intranet.alxswe.com/rltoken/m8g02HcD2ovrl_K-zulYBw).
 
