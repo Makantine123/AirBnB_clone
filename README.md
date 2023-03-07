@@ -17,6 +17,7 @@ The complete project is composed of the following:
     * Create
     * Update
     * Destroy
+
 ![serverside](://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/815046647d23428a14ca.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230307%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230307T061051Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=3608bd63cc335c20c5ab7465908a90aa2d19ca96860bb4bd2e04bb5149c38ab3)
 
 ## Web Static
