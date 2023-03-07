@@ -14,7 +14,7 @@ The complete project is composed of the following:
 ## The Console
 * Data model
 * Data management
-Console or Command Interpreter
+    Console or Command Interpreter
     * Create
     * Update
     * Destroy
