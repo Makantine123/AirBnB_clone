@@ -46,3 +46,7 @@ The complete project is composed of the following:
  ### 2. File Storage via JSON
 
  ## Database Structure
+
+ # AUTHORS
+Siphelele Makhathini <siphelele.mlungisi@gmail.com>
+Lorenzo Lawrence <jerumehlawrence@gmail.com>
