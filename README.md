@@ -1,3 +1,5 @@
+<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230307%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20230307T151311Z&amp;X-Amz-Expires=86400&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=1db6c801408552c9ba0f216a5d2f7749397578531a32399c03ea02db10e4831a" alt="" loading="lazy" style="">
+
 This project is a simple copy of the [AirBnB Website](://intranet.alxswe.com/rltoken/m8g02HcD2ovrl_K-zulYBw).
 
 The complete project is composed of the following:
