@@ -48,5 +48,5 @@ The complete project is composed of the following:
  ## Database Structure
 
  # AUTHORS
-Siphelele Makhathini <siphelele.mlungisi@gmail.com>
-Lorenzo Lawrence <jerumehlawrence@gmail.com>
+* Siphelele Makhathini <siphelele.mlungisi@gmail.com>
+* Lorenzo Lawrence <jerumehlawrence@gmail.com>
