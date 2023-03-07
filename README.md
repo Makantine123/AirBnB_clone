@@ -10,7 +10,6 @@ The complete project is composed of the following:
 
 # Final Product
 ![](/assets/images/hbnb_final_product_1.png)
-
 ![](/assets/images/hbnb_final_product_2.png)
 
 # Project Breakdown
