@@ -58,6 +58,7 @@ The command interpreter manages objects contained in the project, namely by:
  ### 2. File Storage via JSON
 
  ## Database Structure
+ ![](/assets/images/data_diagram.jpg)
 
  # AUTHORS
 * Siphelele Makhathini <siphelele.mlungisi@gmail.com>
