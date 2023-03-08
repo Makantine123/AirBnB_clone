@@ -12,11 +12,26 @@ class BaseModel:
     Class BaseModel that defines all common attributes/methods for other classes
     """
 
-    def __init__(self):
-        """Initialization"""
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+    def __init__(self, *args, **kwargs):
+        """
+        Initialization and re-create of the instance using dictionary kwargs if not empty
+        kwargs - Dictionary
+            keys -> attribute name excluding __class__
+            values -> value of attribute name
+            created_at -> string to be converted back to DATETIME object
+            updated_at -> string to be converted back to DATETIME object
+        """
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    continue
+                elif key == "created_at" or key == "updated_at":
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                setattr(self, key, value)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """Defines what should print for each instance of the class"""
