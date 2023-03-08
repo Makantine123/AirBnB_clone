@@ -3,10 +3,9 @@
 
 from uuid import uuid4
 from datetime import datetime, timezone
-from models import storage
-"""from models import storage"""
 
 isotime = "%Y-%m-%dT%H:%M:%S.%f"
+
 
 class BaseModel:
     """
