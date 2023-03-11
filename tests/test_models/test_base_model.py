@@ -38,8 +38,10 @@ class Test_BaseModel(unittest.TestCase):
         my_dict = self.base1.to_dict()
         self.assertEqual(my_dict["id"], self.base1.id)
         self.assertEqual(my_dict["name"], self.base1.name)
-        self.assertEqual(my_dict["created_at"], self.base1.created_at.isoformat())
-        self.assertEqual(my_dict["updated_at"], self.base1.updated_at.isoformat())
+        createdAt = self.base1.created_at.isoformat()
+        updatedAt = self.base1.updated_at.isoformat()
+        self.assertEqual(my_dict["created_at"], createdAt)
+        self.assertEqual(my_dict["updated_at"], updatedAt)
         self.assertEqual(my_dict["__class__"], type(self.base1).__name__)
 
     def test_save(self):
@@ -52,9 +54,9 @@ class Test_BaseModel(unittest.TestCase):
     def test_instance_creation_kwargs(self):
         "Kwargs dictionary"
         mydict = {"id": "1111111-11111-11111-11111-11111",
-                   "created_at": "2023-03-28T21:03:54.053212",
-                   "__class__": "BaseModel",
-                   "updated_at": "2023-03-28T21:03:54.057521"}
+                  "created_at": "2023-03-28T21:03:54.053212",
+                  "__class__": "BaseModel",
+                  "updated_at": "2023-03-28T21:03:54.057521"}
         base2 = BaseModel(**mydict)
         # Check if attributes exists
         self.assertTrue(hasattr(base2, "id"))
@@ -64,8 +66,11 @@ class Test_BaseModel(unittest.TestCase):
         self.assertTrue(base2.__class__ not in base2.__dict__)
         # Check DateTime formats and Values
         self.assertEqual(base2.id, "1111111-11111-11111-11111-11111")
-        self.assertEqual(base2.created_at.isoformat(), "2023-03-28T21:03:54.053212")
-        self.assertEqual(base2.updated_at.isoformat(), "2023-03-28T21:03:54.057521")
+        createdAt = "2023-03-28T21:03:54.053212"
+        updatedAt = "2023-03-28T21:03:54.057521"
+        self.assertEqual(base2.created_at.isoformat(), createdAt)
+        self.assertEqual(base2.updated_at.isoformat(), updatedAt)
+
 
 if __name__ == "__main__":
     unittest.main()

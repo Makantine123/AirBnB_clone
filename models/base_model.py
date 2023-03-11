@@ -10,12 +10,14 @@ isotime = "%Y-%m-%dT%H:%M:%S.%f"
 
 class BaseModel:
     """
-    Class BaseModel that defines all common attributes/methods for other classes
+    Class BaseModel that defines all common attributes/
+    methods for other classes
     """
 
     def __init__(self, *args, **kwargs):
         """
-        Initialization and re-create of the instance using dictionary kwargs if not empty
+        Initialization and re-create of the instance using dictionary kwargs
+        if not empty
         kwargs - Dictionary
             keys -> attribute name excluding __class__
             values -> value of attribute name
@@ -47,10 +49,10 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """Returns a dictionary containing keys/values of __dict__ of the instance"""
+        """Returns a dictionary containing keys/values of
+        __dict__ of the instance"""
         my_dict = self.__dict__.copy()
         my_dict["__class__"] = self.__class__.__name__
         my_dict["created_at"] = self.created_at.strftime(isotime)
         my_dict["updated_at"] = self.updated_at.strftime(isotime)
         return my_dict
-

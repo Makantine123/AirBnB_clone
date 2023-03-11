@@ -20,4 +20,3 @@ class test_Storage(unittest.TestCase):
         self.assertIsNotNone(inst_dict)
         self.assertTrue(isinstance(inst_dict, dict))
         self.assertIs(inst_dict, fileStore1._FileStorage__objects)
-

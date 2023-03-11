@@ -15,13 +15,12 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(nbnb) "
     classes = ["BaseModel"]
 
-    def do_EOF(self, args):
-        "EQF command to exit the program"
-        print()
-        return True
-
     def do_quit(self, args):
         "Quit command to exit the program"
+        return True
+
+    def do_EOF(self, args):
+        "EQF command to exit the program"
         print()
         return True
 
@@ -107,6 +106,7 @@ class HBNBCommand(cmd.Cmd):
         Updates am instance based on the class name and id by adding or
         updating attribute(save the change into JSON file)
         """
+        cmd_argv = args.split()
 
 
 if __name__ == "__main__":
