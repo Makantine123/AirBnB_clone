@@ -22,6 +22,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, args):
         "Quit command to exit the program"
+        print()
         return True
 
     def do_create(self, args):
@@ -106,7 +107,6 @@ class HBNBCommand(cmd.Cmd):
         Updates am instance based on the class name and id by adding or
         updating attribute(save the change into JSON file)
         """
-
 
 
 if __name__ == "__main__":
