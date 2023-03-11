@@ -24,6 +24,14 @@ class HBNBCommand(cmd.Cmd):
         print()
         return True
 
+    def do_help(self, args):
+        """Command Details"""
+        cmd.Cmd.do_help(self, args)
+
+    def emptyline(self):
+        "Returns to prompt when emptyline is entered"
+        return None
+
     def do_create(self, args):
         """Create an instance of BaseModel
             =>Saves instance to file.json
