@@ -53,4 +53,3 @@ class FileStorage:
                     class_name = value["__class__"]
                     obj = eval(class_name + "(**value)")
                     self.__objects[key] = obj
-
