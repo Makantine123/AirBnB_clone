@@ -20,7 +20,7 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def do_EOF(self, args):
-        "EQF command to exit the program"
+        "EOF command to exit the program"
         return True
 
     def do_help(self, args):
