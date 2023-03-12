@@ -42,7 +42,16 @@ class test_help(unittest.TestCase):
             remove("file.json")
         except FileNotFoundError:
             pass
-        storage.all()
+        storage._FileStorage__objects = {}
+
+    def tearDown(self):
+        """
+        Tear down all methods
+        """
+        try:
+            remove("file.json")
+        except FileNotFoundError:
+            pass
 
     def test_help_help(self):
         """
@@ -128,3 +137,62 @@ class test_help(unittest.TestCase):
             HBNBCommand().onecmd("help all")
             promptstr = myfile.getvalue()
             self.assertEqual(msg, promptstr)
+
+
+class test_create(unittest.TestCase):
+    """
+    Unnitest Class to test Create Command
+    """
+
+    def setUp(self):
+        """
+        Set up methods
+        """
+        try:
+            remove("file.json")
+        except FileNotFoundError:
+            pass
+        storage._FileStorage__objects = {}
+
+    def tearDown(self):
+        """
+        Tear down all methods
+        """
+        try:
+            remove("file.json")
+        except FileNotFoundError:
+            pass
+
+    def test_create_no_class(self):
+        """
+        Test for create with class missing
+        """
+        msg = "*** class name missing ***\n"
+        with patch("sys.stdout", new=io.StringIO()) as myfile:
+            HBNBCommand().onecmd("create")
+            promptstr = myfile.getvalue()
+            self.assertEqual(msg, promptstr)
+
+    def test_creat_invalid_class(self):
+        """
+        Test for create invalid class
+        """
+        msg = "*** class doesn't exist ***\n"
+        with patch("sys.stdout", new=io.StringIO()) as myfile:
+            HBNBCommand().onecmd("create empty")
+            promptstr = myfile.getvalue()
+            self.assertEqual(msg, promptstr)
+
+    def test_create_valid_class(self):
+        """
+        Test fo create of valid class
+        """
+        valid = ["BaseModel"]
+        for i in valid:
+            with patch("sys.stdout", new=io.StringIO()) as myfile:
+                HBNBCommand().onecmd("create " + i)
+                promptstr = myfile.getvalue()
+                indict = storage.all()
+                print(i)
+                self.assertFalse((i + "." + promptstr[:-1]) in indict.keys())
+        self.assertEqual(len(indict), len(valid))

@@ -39,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
             print("*** class name missing ***")
             return None
         elif args != "BaseModel":
-            print("***  class doesn't exist ***")
+            print("*** class doesn't exist ***")
             return None
         else:
             my_inst = eval(args + "()")
