@@ -13,7 +13,7 @@ class HBNBCommand(cmd.Cmd):
     HBNBCCommand class
     """
     prompt = "(nbnb) "
-    classes = ["BaseModel"]
+    classes = ["BaseModel", "User"]
 
     def do_quit(self, args):
         "Quit command to exit the program"
@@ -38,7 +38,7 @@ class HBNBCommand(cmd.Cmd):
         if not args:
             print("*** class name missing ***")
             return None
-        elif args != "BaseModel":
+        elif args not in self.classes:
             print("*** class doesn't exist ***")
             return None
         else:
