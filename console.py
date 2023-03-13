@@ -37,10 +37,10 @@ class HBNBCommand(cmd.Cmd):
         =>Saves instance to file.json
         =>Prints instance id"""
         if not args:
-            print("*** class name missing ***")
+            print("** class name missing **")
             return None
         elif args not in self.classes:
-            print("*** class doesn't exist ***")
+            print("** class doesn't exist **")
             return None
         else:
             my_inst = eval(args + "()")
@@ -52,18 +52,18 @@ class HBNBCommand(cmd.Cmd):
         class name and id"""
         cmd_argv = args.split()
         if not cmd_argv:
-            print("*** class name missing ***")
+            print("** class name missing **")
             return None
         elif cmd_argv[0] not in self.classes:
-            print("*** class doesn't exist ***")
+            print("** class doesn't exist **")
             return None
         elif len(cmd_argv) < 2:
-            print("*** instance id missing ***")
+            print("** instance id missing **")
             return None
         else:
             key = "{}.{}".format(cmd_argv[0], cmd_argv[1])
             if key not in storage.all().keys():
-                print("*** no instance found ***")
+                print("** no instance found **")
             else:
                 obj = storage.all()
                 print(obj[key])
@@ -72,18 +72,18 @@ class HBNBCommand(cmd.Cmd):
         """Delete an instance based on class name"""
         cmd_argv = args.split()
         if not cmd_argv:
-            print("*** class name missing ***")
+            print("** class name missing **")
             return None
         elif (cmd_argv[0] not in self.classes):
-            print("***  class doesn't exist ***")
+            print("**  class doesn't exist **")
             return None
         elif len(cmd_argv) < 2:
-            print("*** instance id missing ***")
+            print("** instance id missing **")
             return None
         else:
             key = "{}.{}".format(cmd_argv[0], cmd_argv[1])
             if key not in storage.all().keys():
-                print("*** no instance found ***")
+                print("** no instance found **")
             else:
                 del storage.all()[key]
                 storage.save()
@@ -106,7 +106,7 @@ class HBNBCommand(cmd.Cmd):
             print(inst)
             return None
         else:
-            print("*** class doesn't exist ***")
+            print("** class doesn't exist **")
             return None
 
     def do_update(self, args):
@@ -114,19 +114,19 @@ class HBNBCommand(cmd.Cmd):
         or Updating attributes(save the change into JSON file)"""
         cmd_argv = args.split()
         if not cmd_argv:
-            print("*** class name missing ***")
+            print("** class name missing **")
         elif cmd_argv[0] not in self.classes:
-            print("*** class doesn't exist ***")
+            print("** class doesn't exist **")
         elif len(cmd_argv) < 2:
-            print("*** instance id missing ***")
+            print("** instance id missing **")
         else:
             key = "{}.{}".format(cmd_argv[0], cmd_argv[1])
             if key not in storage.all().keys():
-                print("*** no instance found ***")
+                print("** no instance found **")
             elif len(cmd_argv) < 3:
-                print("*** attribute name missing ***")
+                print("** attribute name missing **")
             elif len(cmd_argv) < 4:
-                print("*** value missing ***")
+                print("** value missing **")
             else:
                 setattr(storage.all()[key], cmd_argv[2], cmd_argv[3])
                 storage.save()

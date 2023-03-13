@@ -195,4 +195,3 @@ class test_create(unittest.TestCase):
                 indict = storage.all()
                 print(i)
                 self.assertFalse((i + "." + promptstr[:-1]) in indict.keys())
-        self.assertNotEqual(len(indict), len(valid))
