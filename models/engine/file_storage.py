@@ -50,12 +50,9 @@ class FileStorage:
         Deserialise JSON file to __objects (if JSON file __file_path exist)
         """
         if os.path.isfile(self.__file_path):
-            try:
-                with open(self.__file_path, encoding="utf-8") as myfile:
-                    ds_json = json.load(myfile)
-                    for key, value in ds_json.items():
-                        class_name = value["__class__"]
-                        obj = eval(class_name + "(**value)")
-                        self.__objects[key] = obj
-            except Exception:
-                pass
+            with open(self.__file_path, encoding="utf-8") as myfile:
+                ds_json = json.load(myfile)
+                for key, value in ds_json.items():
+                    class_name = value["__class__"]
+                    obj = eval(class_name + "(**value)")
+                    self.__objects[key] = obj
