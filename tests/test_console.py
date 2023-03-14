@@ -6,11 +6,15 @@ Unnittest for AirBnB Clone - Console
 import cmd
 import unittest
 import io
+import os
 
 from models.base_model import BaseModel
 from models import storage
+from models.engine.file_storage import FileStorage
+from models.user import User
 from console import HBNBCommand
 
+from datetime import datetime, timezone
 from unittest.mock import patch
 from os import path, remove
 
@@ -167,7 +171,7 @@ class test_create(unittest.TestCase):
         """
         Test for create with class missing
         """
-        msg = "*** class name missing ***\n"
+        msg = "** class name missing **\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("create")
             promptstr = myfile.getvalue()
@@ -177,7 +181,7 @@ class test_create(unittest.TestCase):
         """
         Test for create invalid class
         """
-        msg = "*** class doesn't exist ***\n"
+        msg = "** class doesn't exist **\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("create empty")
             promptstr = myfile.getvalue()
@@ -194,4 +198,4 @@ class test_create(unittest.TestCase):
                 promptstr = myfile.getvalue()
                 indict = storage.all()
                 print(i)
-                self.assertFalse((i + "." + promptstr[:-1]) in indict.keys())
+                self.assertTrue((i + "." + promptstr[:-1]) in indict.keys())

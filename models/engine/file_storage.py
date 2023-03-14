@@ -13,9 +13,6 @@ Deserialization
 import json
 import os
 
-from models.base_model import BaseModel
-
-
 class FileStorage:
     """
     Class FileStorage serializes instances to a JSON file
@@ -48,10 +45,13 @@ class FileStorage:
         """
         Deserialise JSON file to __objects (if JSON file __file_path exist)
         """
-        if os.path.isfile(self.__file_path):
-            with open(self.__file_path, encoding="utf-8") as myfile:
+        if os.path.isfile(FileStorage.__file_path):
+            with open(FileStorage.__file_path, encoding="utf-8") as myfile:
+                from models.base_model import BaseModel
+                from models.user import User
+
                 ds_json = json.load(myfile)
                 for key, value in ds_json.items():
                     class_name = value["__class__"]
                     obj = eval(class_name + "(**value)")
-                    self.__objects[key] = obj
+                    FileStorage.__objects[key] = obj

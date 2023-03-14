@@ -3,6 +3,7 @@
 """ Command Interpreter """
 
 import cmd
+import sys
 
 from models.user import User
 from models.base_model import BaseModel
@@ -22,6 +23,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_EOF(self, args):
         "EOF command to exit the program"
+        print()
         return True
 
     def do_help(self, args):

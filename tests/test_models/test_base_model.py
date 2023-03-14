@@ -4,8 +4,12 @@ Unittest for BaseModel Class
 """
 
 import unittest
+
 from uuid import uuid4
 from datetime import datetime, timezone
+from unittest.mock import patch
+from os import path, remove
+
 from models.base_model import BaseModel
 
 
@@ -34,6 +38,13 @@ class Test_BaseModel(unittest.TestCase):
         self.assertTrue(hasattr(self.base1, "save"))
         self.assertTrue(hasattr(self.base1, "__str__"))
 
+    def test_to_dict(self):
+        """Tear down for all methods"""
+        try:
+            remove("file.json")
+        except FileNotFoundError:
+            pass
+
     def test_dict(self):
         my_dict = self.base1.to_dict()
         self.assertEqual(my_dict["id"], self.base1.id)
@@ -50,6 +61,12 @@ class Test_BaseModel(unittest.TestCase):
         self.base1.save()
         self.assertEqual(self.base1.created_at, beforeCreated_at)
         self.assertNotEqual(self.base1.updated_at, beforeUpdated_at)
+
+    def test_type(self):
+        base1 = BaseModel()
+        base1.save()
+        self.assertEqual(type(base1.updated_at), datetime)
+        self.assertEqual(type(base1.created_at), datetime)
 
     def test_instance_creation_kwargs(self):
         "Kwargs dictionary"

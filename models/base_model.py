@@ -3,10 +3,7 @@
 
 from uuid import uuid4
 from datetime import datetime, timezone
-
-import models
-
-# from models import storage
+from models import storage
 
 isotime = "%Y-%m-%dT%H:%M:%S.%f"
 
@@ -38,7 +35,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
+            storage.new(self)
 
     def __str__(self):
         """Defines what should print for each instance of the class"""
@@ -49,7 +46,7 @@ class BaseModel:
     def save(self):
         """Updates the updated_at attribute with current datetime"""
         self.updated_at = datetime.now()
-        models.storage.save()
+        storage.save()
 
     def to_dict(self):
         """Returns a dictionary containing keys/values of
