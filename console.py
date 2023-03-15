@@ -176,8 +176,7 @@ class HBNBCommand(cmd.Cmd):
             items = cmd_argv[1].split(",")
             key = items[1].strip()
             value = items[2].strip()
-            args = inst + " " + id[0] + " " + key + " " + value
-            print(args)
+            args = inst.strip() + " " + id[0].strip() + " " + key + " " + value
             self.do_update(args)
 
 

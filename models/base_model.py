@@ -40,7 +40,8 @@ class BaseModel:
         if "updated_at" not in kwargs.keys():
             self.updated_at = datetime.now()
 
-        storage.new(self)
+        if len(kwargs) == 0:
+            storage.new(self)
 
     def __str__(self):
         """Defines what should print for each instance of the class"""
