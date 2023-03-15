@@ -4,6 +4,7 @@
 
 import cmd
 import sys
+import re
 
 from models.user import User
 from models.amenity import Amenity
@@ -159,6 +160,11 @@ class HBNBCommand(cmd.Cmd):
             self.do_all(inst)
         elif cmd_argv[1] == "count()":
             self.do_count(inst)
+        elif "show" in cmd_argv[1]:
+            id = cmd_argv[1].split("(")
+            id = id[1].split(")")
+            args = inst + " " + id[0]
+            self.do_show(args)
 
 
 if __name__ == "__main__":
