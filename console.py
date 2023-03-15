@@ -173,10 +173,12 @@ class HBNBCommand(cmd.Cmd):
         elif "update" in cmd_argv[1]:
             id = cmd_argv[1].split("(")
             id = id[1].split(")")
+            id = id[0].split(",")
             items = cmd_argv[1].split(",")
             key = items[1].strip()
             value = items[2].strip()
-            args = inst.strip() + " " + id[0].strip() + " " + key + " " + value
+            args = inst + " " + id[0] + " "\
+                + key + " " + value
             self.do_update(args)
 
 
