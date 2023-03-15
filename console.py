@@ -141,6 +141,14 @@ class HBNBCommand(cmd.Cmd):
                 setattr(storage.all()[key], cmd_argv[2], cmd_argv[3])
                 storage.save()
 
+    def do_count(self, args):
+        cmd_args = args.split()
+        count = 0
+        for key in storage.all().keys():
+            if cmd_args[0] in key:
+                count += 1
+        print(count)
+
     def default(self, args):
         """
         Retriev all instances of a class by using <class name>.all()
@@ -149,6 +157,8 @@ class HBNBCommand(cmd.Cmd):
         inst = cmd_argv[0]
         if cmd_argv[1] == "all()":
             self.do_all(inst)
+        elif cmd_argv[0] == "count()":
+            self.do_count(inst)
 
 
 if __name__ == "__main__":
