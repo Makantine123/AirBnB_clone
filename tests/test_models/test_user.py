@@ -125,7 +125,16 @@ class Test_initUser(unittest.TestCase):
         self.assertNotEqual(user2.id, user3.id)
         self.assertNotEqual(user3.id, user1.id)
 
-
+    def Test_attributes_exist(self):
+        """
+        Check if user attributes exist
+        """
+        user = User()
+        user.first_name = "Siphelele"
+        user.last_name = "Makhathini"
+        user.email = "siphelele.mlungisi@gmail.com"
+        user.password = "12345"
+        self.assertEqual(getattr(user, "first_name", False), "Siphelele")
 
 
 
