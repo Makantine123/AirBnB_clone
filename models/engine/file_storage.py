@@ -20,8 +20,8 @@ class FileStorage:
     and deserializes JSON file to an instance
     """
 
-    classes = ["BaseModel", "User", "Review", "Place", "City", "State"
-               , "Amenity"]
+    classes = ["BaseModel", "User", "Review", "Place", "City", "State",
+               "Amenity"]
     __file_path = "file.json"
     __objects = {}
 
@@ -52,6 +52,11 @@ class FileStorage:
             with open(FileStorage.__file_path, encoding="utf-8") as myfile:
                 from models.base_model import BaseModel
                 from models.user import User
+                from models.city import City
+                from models.place import Place
+                from models.state import State
+                from models.review import Review
+                from models.amenity import Amenity
 
                 ds_json = json.load(myfile)
                 for key, value in ds_json.items():

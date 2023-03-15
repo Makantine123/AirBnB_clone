@@ -118,7 +118,7 @@ class Test_new(unittest.TestCase):
         """
         Test new User
         """
-        ndict = {"first_name": "Siphelele", "last_name:": "Makhathini",\
+        ndict = {"first_name": "Siphelele", "last_name:": "Makhathini",
                  "id": "123"}
         user = User(**ndict)
         key = user.__class__.__name__ + "." + "123"
@@ -140,7 +140,7 @@ class Test_save(unittest.TestCase):
         """
         try:
             remove("file.json")
-        except:
+        except FileNotFoundError:
             pass
         self._FileStorage__objects = {}
 
@@ -150,7 +150,7 @@ class Test_save(unittest.TestCase):
         """
         try:
             remove("file.json")
-        except:
+        except FileNotFoundError:
             pass
 
     def test_save_base(self):
