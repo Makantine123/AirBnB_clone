@@ -31,6 +31,7 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, args):
         "EOF command to exit the program"
         quit()
+        return True
 
     def do_help(self, args):
         """Command Details"""
@@ -139,6 +140,15 @@ class HBNBCommand(cmd.Cmd):
             else:
                 setattr(storage.all()[key], cmd_argv[2], cmd_argv[3])
                 storage.save()
+
+    def default(self, args):
+        """
+        Retriev all instances of a class by using <class name>.all()
+        """
+        cmd_argv = args.split(".")
+        inst = cmd_argv[0]
+        if cmd_argv[1] == "all()":
+            self.do_all(inst)
 
 
 if __name__ == "__main__":
