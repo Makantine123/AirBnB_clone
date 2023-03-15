@@ -164,17 +164,3 @@ class Test_initUser(unittest.TestCase):
                 user.created_at.isoformat(), "2017-09-28T21:03:54.053212")
         self.assertEqual(
                 user.updated_at.isoformat(), "2017-09-28T21:03:54.056212")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
