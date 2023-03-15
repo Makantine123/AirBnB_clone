@@ -39,7 +39,7 @@ class HBNBCommand(cmd.Cmd):
 
     def emptyline(self):
         "Returns to prompt when emptyline is entered"
-        pass
+        return
 
     def do_create(self, args):
         """Create an instance of BaseModel
