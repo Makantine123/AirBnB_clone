@@ -90,6 +90,20 @@ class Test_class_user_attributes(unittest.TestCase):
             self.assertEqual(getattr(User, key, False), val)
             self.assertEqual(getattr(user.__class__, key, False), "")
 
+    def Test_assign_user_attributes(self):
+        """
+        Check if values can be assigned to attributes
+        """
+        user = User()
+        user.first_name = "Sphe"
+        user.last_name = "Makh"
+        user.email = "123@gmail.com"
+        user.password = "123"
+        self.assertEqual(getattr(user, user.first_name, False), "Sphe")
+        self.assertEqual(getattr(user, user.last_name, False), "Makh")
+        self.assertEqual(getattr(user, user.email, False), "123@gmail.com")
+        self.assertEqual(getattr(user, user.password, False), "123")
+
 
 class Test_initUser(unittest.TestCase):
     """
