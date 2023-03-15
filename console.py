@@ -35,6 +35,7 @@ class HBNBCommand(cmd.Cmd):
     def do_help(self, args):
         """Command Details"""
         cmd.Cmd.do_help(self, args)
+        print()
 
     def emptyline(self):
         "Returns to prompt when emptyline is entered"

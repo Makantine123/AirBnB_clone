@@ -61,7 +61,7 @@ class test_help(unittest.TestCase):
         """
         Test "help help" command
         """
-        msg = "Command Details\n"
+        msg = "Command Details\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help help")
             promptstr = myfile.getvalue()
@@ -71,7 +71,7 @@ class test_help(unittest.TestCase):
         """
         Test "help quit" command
         """
-        msg = "Quit command to exit the program\n"
+        msg = "Quit command to exit the program\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help quit")
             promptstr = myfile.getvalue()
@@ -81,7 +81,7 @@ class test_help(unittest.TestCase):
         """
         Test "help EOF" command
         """
-        msg = "EOF command to exit the program\n"
+        msg = "EOF command to exit the program\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help EOF")
             promptstr = myfile.getvalue()
@@ -93,7 +93,7 @@ class test_help(unittest.TestCase):
         """
         msg = "Create an instance of BaseModel\n\
         =>Saves instance to file.json\n\
-        =>Prints instance id\n"
+        =>Prints instance id\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help create")
             promptstr = myfile.getvalue()
@@ -104,7 +104,7 @@ class test_help(unittest.TestCase):
         Test "help show" command
         """
         msg = "Prints the string representation of an instance based on the\n\
-        class name and id\n"
+        class name and id\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help show")
             promptstr = myfile.getvalue()
@@ -115,7 +115,7 @@ class test_help(unittest.TestCase):
         Test "help update" command
         """
         msg = "Updates an instance based on the class name and id by adding\n\
-        or Updating attributes(save the change into JSON file)\n"
+        or Updating attributes(save the change into JSON file)\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help update")
             promptstr = myfile.getvalue()
@@ -125,7 +125,7 @@ class test_help(unittest.TestCase):
         """
         Test "help destroy" command
         """
-        msg = "Delete an instance based on class name\n"
+        msg = "Delete an instance based on class name\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help destroy")
             promptstr = myfile.getvalue()
@@ -136,7 +136,7 @@ class test_help(unittest.TestCase):
         Test "help all" command
         """
         msg = "Prints all string representation of all instances based on\n\
-        or not based on the class name\n"
+        or not based on the class name\n\n"
         with patch("sys.stdout", new=io.StringIO()) as myfile:
             HBNBCommand().onecmd("help all")
             promptstr = myfile.getvalue()
