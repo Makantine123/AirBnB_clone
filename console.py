@@ -157,7 +157,7 @@ class HBNBCommand(cmd.Cmd):
         inst = cmd_argv[0]
         if cmd_argv[1] == "all()":
             self.do_all(inst)
-        elif cmd_argv[0] == "count()":
+        elif cmd_argv[1] == "count()":
             self.do_count(inst)
 
 
