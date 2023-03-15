@@ -165,6 +165,11 @@ class HBNBCommand(cmd.Cmd):
             id = id[1].split(")")
             args = inst + " " + id[0]
             self.do_show(args)
+        elif "destroy" in cmd_argv[1]:
+            id = cmd_argv[1].split("(")
+            id = id[1].split(")")
+            args = inst + " " + id[0]
+            self.do_destroy(args)
 
 
 if __name__ == "__main__":
