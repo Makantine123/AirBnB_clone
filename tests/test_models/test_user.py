@@ -135,7 +135,13 @@ class Test_initUser(unittest.TestCase):
         user.email = "siphelele.mlungisi@gmail.com"
         user.password = "12345"
         self.assertEqual(getattr(user, "first_name", False), "Siphelele")
-
+        self.assertEqual(getattr(user, "last_name", False), "Makhathini")
+        self.assertEqual(getattr(user, "email", False), "siphelele.mlungisi@gmail.com")
+        self.assertEqual(getattr(user, "password", False), "12345")
+        self.assertTrue("email" in user.__dict__)
+        self.assertTrue("password" in user.__dict__)
+        self.assertTrue("first_name" in user.__dict__)
+        self.assertTrue("last_name" in user.__dict__)
 
 
 
