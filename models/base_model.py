@@ -24,18 +24,23 @@ class BaseModel:
             created_at -> string to be converted back to DATETIME object
             updated_at -> string to be converted back to DATETIME object
         """
-        if kwargs:
-            for key, value in kwargs.items():
-                if key == "__class__":
-                    continue
-                elif key == "created_at" or key == "updated_at":
-                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                setattr(self, key, value)
-        else:
+        for key, value in kwargs.items():
+            if key == "__class__":
+                continue
+            elif key == "created_at" or key == "updated_at":
+                value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+            setattr(self, key, value)
+
+        if "id" not in kwargs.keys():
             self.id = str(uuid4())
+
+        if "created_at" not in kwargs.keys():
             self.created_at = datetime.now()
+
+        if "updated_at" not in kwargs.keys():
             self.updated_at = datetime.now()
-            storage.new(self)
+
+        storage.new(self)
 
     def __str__(self):
         """Defines what should print for each instance of the class"""
