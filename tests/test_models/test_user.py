@@ -136,13 +136,34 @@ class Test_initUser(unittest.TestCase):
         user.password = "12345"
         self.assertEqual(getattr(user, "first_name", False), "Siphelele")
         self.assertEqual(getattr(user, "last_name", False), "Makhathini")
-        self.assertEqual(getattr(user, "email", False), "siphelele.mlungisi@gmail.com")
+        self.assertEqual(getattr(
+            user, "email", False), "siphelele.mlungisi@gmail.com")
         self.assertEqual(getattr(user, "password", False), "12345")
         self.assertTrue("email" in user.__dict__)
         self.assertTrue("password" in user.__dict__)
         self.assertTrue("first_name" in user.__dict__)
         self.assertTrue("last_name" in user.__dict__)
 
+    def test_instance_creation_kwarg(self):
+        """
+        Check creation of user using kwargs
+        """
+        data = {"id": "56d43177-cc5f-4d6c-a0c1-e167f8c27337",
+                "created_at": "2017-09-28T21:03:54.053212",
+                "__class__": "User",
+                "updated_at": "2017-09-28T21:03:54.056212"}
+        user = User(**data)
+        self.assertTrue(hasattr(user, "id"))
+        self.assertTrue(hasattr(user, "created_at"))
+        self.assertTrue(hasattr(user, "__class__"))
+        self.assertTrue(hasattr(user, "updated_at"))
+        self.assertTrue(user.__class__ not in user.__dict__)
+        self.assertEqual(
+                user.id, "56d43177-cc5f-4d6c-a0c1-e167f8c27337")
+        self.assertEqual(
+                user.created_at.isoformat(), "2017-09-28T21:03:54.053212")
+        self.assertEqual(
+                user.updated_at.isoformat(), "2017-09-28T21:03:54.056212")
 
 
 
