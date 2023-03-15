@@ -1,4 +1,5 @@
-*.pyc
 __pycache__/
+*.py[cod]
+.pytest_cache/
 w3c_validator.py
 W3C-validator
