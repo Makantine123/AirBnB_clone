@@ -4,7 +4,8 @@
     width: inherit;
     border: solid 1px #DDDDDD;
     border-radius: 4px;
-    display: flex
+    display: flex;
+    justify-content: flex-start;
 }
 .filters button {
     font-size: 18px;
@@ -46,4 +47,29 @@
     margin-bottom: auto;
     margin-left:20px;
     color: inherit;
+}
+.popover {
+    display: none;
+    position: absolute;
+    list-style: none;
+    background-color: #FAFAFA;
+    margin-top: 70px;
+    margin-left:-1px;
+    border: 1px solid #DDDDDD;
+    width: 16%;
+    padding-inline-start: inherit;
+    padding-left: 20px;
+    padding-right: 1%;
+}
+li {
+    list-style: none;
+}
+.amenities .popover {
+    padding-top: 20px
+}
+.locations:hover .popover {
+    display: grid;
+}
+.amenities:hover .popover {
+    display: grid
 }
