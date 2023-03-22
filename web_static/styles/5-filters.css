@@ -1,7 +1,7 @@
 .filters {
     color: #FFFFFF;
     height: 70px;
-    width: inherit;
+    width: 100%;
     border: solid 1px #DDDDDD;
     border-radius: 4px;
     display: flex
@@ -23,21 +23,18 @@
     opacity: 90%;
 }
 .locations, .amenities {
-    color: black;
     height: 100%;
     width: 25%;
-    align-content: center;
-    display: grid;
+    color: black;
 }
 .locations {
     border-right: solid 1px #DDDDDD;
 }
 .locations h3, .amenities h3 {
     font-weight: 600;
-    margin-bottom: 0px;
-    margin-top: auto;
+    margin-bottom: 5px;
+    margin-top: 15px;
     margin-left: 20px;
-    color: inherit;
 }
 .locations h4, .amenities h4 {
     font-weight: 400;
@@ -45,5 +42,4 @@
     margin-top: 0px;
     margin-bottom: auto;
     margin-left:20px;
-    color: inherit;
 }

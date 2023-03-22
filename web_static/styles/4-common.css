@@ -13,3 +13,8 @@ body {
     margin-right: auto;
     align-items: center;
 }
+/** Adjust footer position with .places section height **/
+html {
+    position: relative;
+    min-height: 100%;
+}
